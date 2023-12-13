@@ -1,4 +1,3 @@
-# /app/models/deliveryman.py
 
 import enum
 from uuid import UUID

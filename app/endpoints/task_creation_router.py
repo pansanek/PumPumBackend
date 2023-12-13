@@ -2,7 +2,7 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException, Body
 
 from app.services.task_creation_service import TaskCreationService
-from app.models.task import Task, TaskDifficulty
+from app.models.task import Task
 
 task_creation_router = APIRouter(prefix='/task-creation', tags=['Task'])
 

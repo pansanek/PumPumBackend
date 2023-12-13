@@ -49,6 +49,5 @@ class TestingRepo:
 
         return percentage
 
-    def get_answers_testing_matrix(self, tasks: List[Task]) -> List[int]:
 
 
