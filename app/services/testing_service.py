@@ -17,7 +17,7 @@ class TestingService():
     def get_all_results(self) -> Dict[UUID, List[int]]:
         return self.testing_repo.get_all_results()
 
-    def check_answers(self, user: User, user_answers: list[int], right_answers: list[int]) -> list[int]:
+    def check_user_answers(self, user: User, user_answers: list[int], right_answers: list[int]) -> list[int]:
         return self.testing_repo.get_binary_testing_matrix(
             user=user,
             user_answers=user_answers,

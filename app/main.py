@@ -12,8 +12,8 @@ app = FastAPI(title='PumPum Math Boosting Service')
 @app.on_event('startup')
 def startup():
     loop = asyncio.get_event_loop()
-    #asyncio.ensure_future(rabbitmq.consume_tasks(loop))
+    asyncio.ensure_future(rabbitmq.consume_tasks(loop))
 
 
 app.include_router(task_creation_router, prefix='/task-creation-api')
-# app.include_router(testing_router, prefix='/testing-api')
+app.include_router(testing_router, prefix='/testing-api')

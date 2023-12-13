@@ -15,4 +15,5 @@ class Task(BaseModel):
     id: UUID
     statement: str
     difficulty: TaskDifficulty
+    answer: str
 

@@ -9,8 +9,6 @@ import uuid
 from random import randint, uniform, choice
 from typing import List
 
-
-
 # Создаем тестовый набор данных
 tasks: List[Task] = []
 
@@ -22,32 +20,33 @@ def generate_tasks():
         task = Task(
             id=uuid.uuid4(),
             statement="",
-            difficulty=choice(list(TaskDifficulty))
-                    )
+            difficulty=choice(list(TaskDifficulty)),
+            answer=""
+        )
         if task_type == "vector":
             task = Task(
                 id=uuid.uuid4(),
-                statement="На координатной плоскости изображены векторы a и b. Вектор a разложен по двум "
-                          "неколлинеарным векторам i и j. Найдите коэффициент разложения k.",
-                difficulty=choice(list(TaskDifficulty))
+                statement="Две стороны прямоугольника ABCD равны 6 и 8. Найдите длину вектора AC",
+                difficulty=choice(list(TaskDifficulty)),
+                answer="10"
             )
 
         elif task_type == "parallelepiped":
             task = Task(
                 id=uuid.uuid4(),
-                statement="Одна из граней прямоугольного параллелепипеда — квадрат. Диагональ параллелепипеда равна d "
-                          "и образует с плоскостью этой грани угол 45°. Найдите объем параллелепипеда.",
-                difficulty=choice(list(TaskDifficulty))
+                statement="Дан прямоугольный параллелепипед, стороны основания которого равны 4 и 5 , а боковое ребро равно 3 . Найдите наибольшую площадь его грани.",
+                difficulty=choice(list(TaskDifficulty)),
+                answer="20"
             )
 
         elif task_type == "probability":
 
             task = Task(
                 id=uuid.uuid4(),
-                statement="В классе 26 учащихся, среди них два друга — Андрей и Сергей. Учащихся случайным образом "
-                          "разбивают на 2 равные группы. Найдите вероятность того, что Андрей и Сергей окажутся в "
-                          "одной группе.",
-                difficulty=choice(list(TaskDifficulty))
+                statement="В фирме такси в данный момент свободно 15 машин: 2 красных, 9 желтых и 4 зеленых. По вызову выехала одна из машин, случайно оказавшихся ближе всего к заказчице. Найдите вероятность того, что к ней приедет желтое такси.",
+                difficulty=choice(list(TaskDifficulty)),
+                answer="0.6"
+
             )
 
         elif task_type == "defects":
@@ -57,13 +56,17 @@ def generate_tasks():
                           "качества продукции выявляется 80% дефектных тарелок. Остальные тарелки поступают в "
                           "продажу. Найдите вероятность того, что случайно выбранная при покупке тарелка не имеет "
                           "дефектов.",
-                difficulty=choice(list(TaskDifficulty))
+                difficulty=choice(list(TaskDifficulty)),
+                answer=""
+
             )
         elif task_type == "equation":
             task = Task(
                 id=uuid.uuid4(),
                 statement="Решите уравнение x^2 - 4x + 4 = 0. В ответе напишите наибольший отрицательный корень.",
-                difficulty=choice(list(TaskDifficulty))
+                difficulty=choice(list(TaskDifficulty)),
+                answer="2"
+
             )
 
         elif task_type == "increasing_intervals":
@@ -72,7 +75,9 @@ def generate_tasks():
                 statement="На рисунке изображен график производной функции f(x) определенной на интервале (a, "
                           "b). Найдите промежутки возрастания функции f(x). В ответе укажите сумму целых точек, "
                           "входящих в эти промежутки.",
-                difficulty=choice(list(TaskDifficulty))
+                difficulty=choice(list(TaskDifficulty)),
+                answer="15"
+
             )
         elif task_type == "resonance_frequency":
             task = Task(
@@ -81,35 +86,42 @@ def generate_tasks():
                           "A = k / (sqrt((f_r^2 - f^2)^2 + (f * b)^2)), где f_r — резонансная частота. Найдите "
                           "максимальную частоту f меньшую резонансной, для которой амплитуда колебаний превосходит "
                           "величину A не более чем на B. Ответ выразите в f_r.",
-                difficulty=choice(list(TaskDifficulty))
+                difficulty=choice(list(TaskDifficulty)),
+                answer=""
+
             )
         elif task_type == "stock":
             task = Task(
                 id=uuid.uuid4(),
-                statement="В понедельник акции компании подорожали на некоторое количество процентов, а во вторник "
-                          "подешевели на то же самое количество процентов. В результате они стали стоить на C "
-                          "дешевле, чем при открытии торгов в понедельник. На сколько процентов подорожали акции "
-                          "компании в понедельник?",
-                difficulty=choice(list(TaskDifficulty))
+                statement="Амплитуда колебаний маятника зависит от частоты вынуждающей силы, определяемой по формуле A(w) = A0 * ωр² / | ωр² - ω |, где ω – частота вынуждающей силы (в ), A0 – постоянный параметр, ωр – резонансная частота. Найдите максимальную частоту ω, меньшую резонансной, для которой амплитуда колебаний превосходит величину A0 не более чем на 12.5%.",
+                difficulty=choice(list(TaskDifficulty)),
+                answer="120"
+
             )
         elif task_type == "intersection_point":
             task = Task(
                 id=uuid.uuid4(),
                 statement="На рисунке изображены графики двух линейных функций. Найдите абсциссу точки пересечения "
                           "графиков.",
-                difficulty=choice(list(TaskDifficulty))
+                difficulty=choice(list(TaskDifficulty)),
+                answer="-5"
+
             )
         elif task_type == "function_max":
             task = Task(
                 id=uuid.uuid4(),
                 statement="Найдите наибольшее значение функции f(x) = -2x^2 + 4x - 3 на отрезке [1, 4].",
-                difficulty=choice(list(TaskDifficulty))
+                difficulty=choice(list(TaskDifficulty)),
+                answer="-1"
+
             )
         elif task_type == "equation_solve":
             task = Task(
                 id=uuid.uuid4(),
                 statement="Решите уравнение 2x^2 - 8x + 6 = 0. Найдите решения уравнения, принадлежащие отрезку [3; 5].",
-                difficulty=choice(list(TaskDifficulty))
+                difficulty=choice(list(TaskDifficulty)),
+                answer="Нет решений"
+
             )
 
         tasks.append(task)
@@ -136,6 +148,6 @@ class TaskCreationRepo:
         generate_tasks()
         return random.choice(tasks)
 
-
-
-
+    def get_all_tasks(self) -> List[Task]:
+        generate_tasks()
+        return tasks

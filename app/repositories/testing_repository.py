@@ -48,3 +48,7 @@ class TestingRepo:
             percentage = 0  # В случае отсутствия данных возвращаем 0%
 
         return percentage
+
+    def get_answers_testing_matrix(self, tasks: List[Task]) -> List[int]:
+
+
